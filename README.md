@@ -1,6 +1,6 @@
 # Boas vindas ao projeto de Trivia!
 
-  Trivia é um jogo de perguntas e respostas. 
+  Trivia é um jogo de perguntas e respostas, estilo Show do Milhão. 
 
 # Tecnologias Usadas
   - HTML
