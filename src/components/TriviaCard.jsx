@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import '../styles/TriviaCard.css';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
+import { FcAlarmClock } from 'react-icons/fc';
 import { sumScore } from '../Redux/actions';
 
 const correctAnswer = 'correct-answer';
@@ -111,10 +112,14 @@ class TriviaCard extends Component {
     const { verifySeconds } = this.props;
     if (seconds !== 0) {
       verifySeconds(false);
-      return (<p>{`Faltam ${seconds} segundos ⌛`}</p>);
+      return (<p>{`Tempo restante: ${seconds}s`}</p>);
     }
     verifySeconds(true);
-    return (<p className="timer_alert">Seu tempo acabou &#128533;</p>);
+    return (
+      <div className="timer_alert">
+        Seu tempo acabou...
+        <FcAlarmClock className="alarm_clock" />
+      </div>);
   }
 
   render() {
@@ -132,8 +137,8 @@ class TriviaCard extends Component {
 
     return (
       <div className="card_container">
-        <h1 data-testid="question-category">{category}</h1>
-        <h2 data-testid="question-text">{question}</h2>
+        <h1 data-testid="question-category">{window.atob(category)}</h1>
+        <h2 data-testid="question-text">{window.atob(question)}</h2>
         <button
           className="questions-buttons"
           type="button"
@@ -142,7 +147,7 @@ class TriviaCard extends Component {
           onClick={ (e) => this.verifyAnswers(e) }
           disabled={ seconds === 0 || clicked }
         >
-          {elCorrectAnswer}
+          {window.atob(elCorrectAnswer)}
         </button>
         {incorrectAnswers.map((answer, index) => (
           <button
@@ -153,7 +158,7 @@ class TriviaCard extends Component {
             onClick={ (e) => this.verifyAnswers(e) }
             disabled={ seconds === 0 || clicked }
           >
-            {answer}
+            {window.atob(answer)}
           </button>
         ))}
 
