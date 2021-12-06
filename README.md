@@ -11,6 +11,7 @@
 
 # Protótipo do Projeto
   O projeto foi desenvolvido conforme o seguinte protótipo: https://www.figma.com/file/9XUqIwKEFBfbZn5t8MMZJY/Trivia---project?node-id=0%3A1 <br />
+  
   Foi utilizada a metodologia de Pair Programming 
  
  # Rodando o Projeto Localmente
