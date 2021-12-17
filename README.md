@@ -16,7 +16,8 @@
  
  # Rodando o Projeto Localmente
   1° `git clone git@github.com:lucasam1992/project-trivia-game.git` - Clone o repositório para sua máquina<br />
-  2° `npm install` - Instale as depedências<br />
+  2° `cd project-trivia-game` - Entre na pasta do repositório clonado<br />
+  3° `npm install` - Instale as depedências<br />
   3° `npm start` - Execute o programa<br />
 
  # Autores
